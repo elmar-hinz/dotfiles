@@ -1,0 +1,242 @@
+" ****************** Vundle: Bundles ************************************** {{{
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'matchit.zip'
+Plugin 'MatchTag'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-entire'
+" Plugin 'tpope/vim-endwise'
+Plugin 'editorconfig/editorconfig-vim'
+
+call vundle#end()
+filetype plugin indent on
+" ************************************************************************** }}}
+" ****************** General autocmd *************************************** {{{
+" ************************************************************************** }}}
+" ****************** File type autocmd ************************************* {{{
+" ============= VimScript file settings ==================================== {{{
+augroup filetype_vim
+	autocmd!
+	:autocmd BufWinEnter *.vim/vimrc silent loadview
+	:autocmd BufWinLeave *.vim/vimrc silent mkview!
+	:autocmd FileType vim	:setlocal foldmethod=marker
+	:autocmd FileType vim	:nnoremap	<buffer> <LOCALLEADER>c	I" <ESC>
+" -------- Folding levels -------------------------------------------------- {{{
+	" Folding levels 1 - 4 ==> fxb : f-old b-egin, fxe : f-old e-nd
+	:autocmd FileType vim	inoreabbrev	<buffer> f1b
+		\ <ESC>O" <ESC>74a*<ESC>a {{{<ESC>020lR <C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f1e
+		\ <ESC>O" <ESC>74a*<ESC>a }}}<ESC><C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f2b
+		\ <ESC>O" <ESC>74a=<ESC>a {{{<ESC>015lR <C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f2e
+		\ <ESC>O" <ESC>74a=<ESC>a }}}<ESC><C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f3b
+		\ <ESC>O" <ESC>74a-<ESC>a {{{<ESC>010lR <C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f3e
+		\ <ESC>O" <ESC>74a-<ESC>a }}}<ESC><C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f4b
+		\ <ESC>O" <ESC>74a.<ESC>a {{{<ESC>005lR <C-R>=Eatchar()<CR>
+	:autocmd FileType vim	inoreabbrev	<buffer> f4e
+		\ <ESC>O" <ESC>74a.<ESC>a }}}<ESC><C-R>=Eatchar()<CR>
+" -------------------------------------------------------------------------- }}}
+augroup END
+" ========================================================================== }}}
+" ============= JavaScript file settings =================================== {{{
+augroup filetype_javascript
+	autocmd!
+	:autocmd FileType javascript	:nnoremap	<buffer> <LOCALLEADER>c	I// <ESC>
+augroup END
+" ========================================================================== }}}
+" ============= PHP file settings ========================================== {{{
+augroup filetype_php
+	autocmd!
+	:autocmd FileType php	:nnoremap	<buffer> <LOCALLEADER>c	I// <ESC>
+	:autocmd FileType php	:setlocal foldmethod=indent
+	:autocmd FileType php	:setlocal noexpandtab
+augroup END
+" ========================================================================== }}}
+" ============= Python file settings ======================================= {{{
+augroup filetype_python
+	autocmd!
+	:autocmd FileType python :nnoremap <buffer>	<LOCALLEADER>c	I* <ESC>
+augroup END
+" ========================================================================== }}}
+" ============= Ruby file settings ========================================= {{{
+augroup filetype_ruby
+	autocmd!
+	:autocmd FileType ruby :nnoremap <buffer>	<LOCALLEADER>c	I# <ESC>
+augroup END
+" ========================================================================== }}}
+" ============= YAML file settings ========================================= {{{
+augroup filetype_yaml
+	autocmd!
+	:autocmd FileType yaml	:setlocal foldmethod=indent
+	:autocmd FileType yaml  :setlocal shiftwidth=2
+augroup END
+" ========================================================================== }}}
+" ============= Markdown file settings ===================================== {{{
+augroup filetype_markdown
+	autocmd!
+
+	" Option i-nside h-eading
+	:autocmd FileType markdown :onoremap <buffer>
+	 	\ ih :<C-U>execute ":normal! ?^\\(--\\\|**\\)\\+$\r:nohlsearch\rkvg_"<CR>
+	" Option a-round h-eading
+	:autocmd FileType markdown :onoremap <buffer>
+		\ ah :<C-U>execute ":normal! ?^\\(--\\\|**\\)\\+$\r:nohlsearch\rg_vk0"<CR>
+augroup END
+" ========================================================================== }}}
+" ============= RestructuredText file settings ============================= {{{
+augroup filetype_restructuredtext
+	autocmd!
+	:autocmd BufWinEnter *.rst silent loadview
+	:autocmd BufWinLeave *.rst silent mkview!
+augroup END
+" ========================================================================== }}}
+" ************************************************************************** }}}
+" ****************** The outer frame *************************************** {{{
+" Numbers on the left border
+set number
+set relativenumber
+set numberwidth=6
+" Status line
+set laststatus=2
+set statusline=%{pathshorten(expand('%:p'))}        " Path to the file
+" :set statusline=%.50F        " Path to the file
+set statusline+=%=        " Middle
+set statusline+=%y        " Filetype of the file
+set statusline+=\         " Separator
+set statusline+=C:%3c     " Column
+set statusline+=\         " Separator
+set statusline+=L:%4l     " Current line
+set statusline+=/         " Separator
+set statusline+=%L        " Total lines
+set statusline+=\         " Separator
+set statusline+=%3p%%     " Percentage
+set statusline+=\         " Separator
+" ************************************************************************** }}}
+" ****************** Mappings ********************************************** {{{
+:let mapleader = ","
+:let maplocalleader = "/"
+" ============= Normal mode ================================================ {{{
+" Perl regular expression search
+:nnoremap /                 /\v
+
+" Remove search higlight markers: highlight nope
+:nnoremap <LEADER>hn        :nohlsearch<CR>
+
+" Toggle highlight of trailing space
+:nnoremap <LEADER>t         :match Error /\v\s+$/<CR>
+:nnoremap <LEADER>T         :match none<CR>
+
+" Move lines up and down
+:nnoremap	<C-J>	ddp
+:nnoremap	<C-K>	ddkP
+
+" Word UPPERCASE, lowercase
+:nnoremap	<LEADER>+	<esc>viwUe
+:nnoremap	<LEADER>-	<esc>viwue
+
+" Append empty Line
+:nnoremap	<SPACE>	o<ESC>
+
+" Hyperlinks
+:nnoremap	ü	<C-]>
+:nnoremap	Ü	<C-T>
+
+" Open configuration files
+:nnoremap	<LEADER>ev	:vsplit	$MYVIMRC <CR>
+:nnoremap	<LEADER>sv	:source	$MYVIMRC <CR>
+
+" Open alternate buffer
+:nnoremap	<LEADER>#	:vsplit #<CR>
+
+" Wrap words
+:nnoremap	<LEADER>"	he<ESC>a"<ESC>hbi"<ESC>lel
+:nnoremap	<LEADER>'	he<ESC>a'<ESC>hbi'<ESC>lel
+:nnoremap	<LEADER><	he<ESC>a><ESC>hbi<<ESC>lel
+
+" Surf jumplist with <CTRL-O> und <CTRL-Ö>
+:nnoremap <C-\> <TAB>
+
+" Surf buffers
+:nnoremap <TAB> :bnext<cr>
+:nnoremap <S-TAB> :bprevious<cr>
+
+" Surf quickfix buffers 
+:nnoremap <LEADER><TAB> :cnext<cr>
+:nnoremap <LEADER><S-TAB> :cprevious<cr>
+
+" Supergrep
+" :nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cWORD>")) . " ."<cr>:copen 20<cr>
+
+" Training: use faster alternatives
+:nnoremap	h	<NOP>
+:nnoremap	l	<NOP>
+" ========================================================================== }}}
+" ============= Visual mode================================================= {{{
+:vnoremap - u
+:vnoremap + U
+" ========================================================================== }}}
+" ============= Insert Mode ================================================ {{{
+:inoremap <C-U> <ESC>viwUea
+
+" Replace <ESC> with *jk*
+:inoremap	jk	<ESC>
+
+" <bracket> the word
+:inoremap <LEADER>< <ESC>hea><ESC>hbi<<ESC>lela
+
+" <BRACKET> the word and upcase it
+:inoremap <LEADER><< <ESC>viwUea><ESC>hbi<<ESC>lela
+
+" Training: use faster alternatives
+:inoremap	<ESC>	<NOP>
+:inoremap	<UP>	<NOP>
+:inoremap	<DOWN>	<NOP>
+:inoremap	<LEFT>	<NOP>
+:inoremap	<RIGHT>	<NOP>
+" ========================================================================== }}}
+" ============= Command Mode =============================================== {{{
+set wildmode=longest:list
+" ========================================================================== }}}
+" ************************************************************************** }}}
+" ****************** Abbrevs *********************************************** {{{
+:inoreabbrev	mfg	Mit freundlichen Grüßen
+:inoreabbrev	40-	" <ESC>38a-<ESC>a
+:inoreabbrev	80+	" <ESC>78a+<ESC>a
+" ************************************************************************** }}}
+" ****************** Other stuff ******************************************* {{{
+syntax on
+filetype on
+set noswapfile
+set visualbell
+set hlsearch incsearch
+set shiftwidth=4
+set tabstop=4
+set autoindent
+set expandtab
+set tags=/Users/elmar/.vimtags
+set viminfo+=n~/.info/viminfo
+let g:netrw_dirhistmax = 0
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+" ************************************************************************** }}}
+" ****************** My Environment **************************************** {{{
+command! Report	!rake report
+" ************************************************************************** }}}
+" ****************** Functions ********************************************* {{{ 
+fun! Eatchar()
+	let c =	getchar(0)
+	return ''
+endfunc
+" ************************************************************************** }}}

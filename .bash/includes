@@ -1,0 +1,7 @@
+
+# Load RVM into a shell session *as a function*
+[[ -s "$rvm_path/scripts/rvm" ]] && source "$rvm_path/scripts/rvm" 
+
+# Completions
+source $HOME/.bash/completions/tmuxinator
+[[ -s "$GIT_COMPLETION" ]] && source "$GIT_COMPLETION"
