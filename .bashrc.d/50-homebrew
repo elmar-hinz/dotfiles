@@ -1,0 +1,5 @@
+export PATH="/Users/tester/Homebrew/sbin:$PATH"
+export PATH="/Users/tester/Homebrew/bin:$PATH"
+export HOMEBREW_PREFIX="/Users/tester/Homebrew"
+export HOMEBREW_TEMP="/Users/tester/Homebrew/Temp"
+export HOMEBREW_CACHE="/Users/tester/Library/Caches/Homebrew"

@@ -1,1 +1,1 @@
-.bash/main
+.bashrc
