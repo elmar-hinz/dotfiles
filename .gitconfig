@@ -1,0 +1,8 @@
+[user]
+	name = Elmar Hinz
+	email = t3elmar@gmail.com
+[push]
+	default = simple
+[alias]
+	st = status
+
