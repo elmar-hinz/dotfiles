@@ -1,5 +1,6 @@
 .DS_Store
 .vim/bundle/*
+.info/*
 .vim/view/
 !.vim/bundle/Vundle.vim
 !.gitkeep
