@@ -1,1 +1,1 @@
-.info/.bash_history
+.cache/.bash_history
