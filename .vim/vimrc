@@ -226,7 +226,7 @@ set tabstop=4
 set autoindent
 set expandtab
 set tags=~/.cache/.vimtags
-set viminfo+=n~/.cache/viminfo
+set viminfo+=n~/.cache/.viminfo
 let g:netrw_dirhistmax = 0
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
