@@ -1,5 +1,9 @@
-export PATH="/Users/tester/Homebrew/sbin:$PATH"
-export PATH="/Users/tester/Homebrew/bin:$PATH"
-export HOMEBREW_PREFIX="/Users/tester/Homebrew"
-export HOMEBREW_TEMP="/Users/tester/Homebrew/Temp"
-export HOMEBREW_CACHE="/Users/tester/Library/Caches/Homebrew"
+export HOMEBREW_PREFIX="$HOME/Homebrew"
+export HOMEBREW_TEMP="$HOMEBREW_PREFIX/Temp"
+export HOMEBREW_CACHE="$HOME/Library/Caches/Homebrew"
+export PATH="$HOMEBREW_PREFIX/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
+export HOMEBREW_CASK_OPTS="--appdir=$HOME/Applications --caskroom=$HOMEBREW_PREFIX/Caskroom"
+if [ -f $HOMEBREW_PREFIX/etc/bash_completion ]; then
+    source $HOMEBREW_PREFIX/etc/bash_completion
+fi

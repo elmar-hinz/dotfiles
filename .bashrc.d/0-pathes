@@ -3,9 +3,6 @@
 # Pathes go here
 ###########################################################################
 
-# Dot directories
-export HISTFILE="$HOME/.info/bash_history"
-
 # Personal directories 
 export MAIN_DIR="$HOME/Main"
 export DESKTOP_DIR="$HOME/Desktop"
@@ -18,17 +15,14 @@ export TEST_DIR="$DESKTOP_DIR/Tests"
 export MAN_DIR="$DESKTOP_DIR/MyMan"
 
 # Program directories
-export SOFTWARE_DIR="/Volumes/SOFTWARE"
-export HOMEBREW_TEMP="$SOFTWARE_DIR/tmp"
-export BREW_DIR="$SOFTWARE_DIR/brew"
-export rvm_path="$SOFTWARE_DIR/rvm"
+# export SOFTWARE_DIR="/Volumes/SOFTWARE"
+# export HOMEBREW_TEMP="$SOFTWARE_DIR/tmp"
+# export BREW_DIR="$SOFTWARE_DIR/brew"
+# export rvm_path="$SOFTWARE_DIR/rvm"
 
 # Pathes 
-PATH="$DOTFILES_DIR/bin:$PATH"
-PATH="$SOFTWARE_DIR/bin:$PATH"
-export PATH="$BREW_DIR/bin:$PATH"
-export MANPATH="$MANPATH:$BREW_DIR/share/man"
-
-# Files
-export GIT_COMPLETION="$BREW_DIR/etc/bash_completion.d/git-completion.bash"
+# PATH="$DOTFILES_DIR/bin:$PATH"
+# PATH="$SOFTWARE_DIR/bin:$PATH"
+# export PATH="$BREW_DIR/bin:$PATH"
+# export MANPATH="$MANPATH:$BREW_DIR/share/man"
 
