@@ -8,3 +8,5 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+[url "ssh://t3elmar@review.typo3.org:29418"]
+	pushInsteadOf = git://git.typo3.org
