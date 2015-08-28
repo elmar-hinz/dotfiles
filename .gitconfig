@@ -4,6 +4,7 @@
 [push]
 	default = simple
 [alias]
+    aliases = config --get-regexp '^alias\\.'
 	st = status
     update = remote update --prune
     branches = branch --all
