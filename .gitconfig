@@ -10,3 +10,9 @@
 	excludesfile = ~/.gitignore_global
 [url "ssh://t3elmar@review.typo3.org:29418"]
 	pushInsteadOf = git://git.typo3.org
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
