@@ -8,95 +8,26 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts
+alias a="alias | less"
+alias b="git branch --all"
+alias d="cd ~/Desktop"
 alias g="git"
-alias h="history"
-alias s="git status"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
+alias h="cd ~"
+alias his="history"
+alias l="ls -hal"
 alias ll="ls -hal"
-alias mux="tmuxinator"
+alias r="git remote -v"
+alias s="git status"
+alias sb="source ~/.bashrc"
 
 # Program customization
-alias rgrep="grep -R "
+alias igrep="grep -i "
+alias rgrep="grep -Ri "
 alias week='date +%V'
-alias pvim='vim -u ./.vimrc'
+alias mux="tmuxinator"
+alias lvim='vim -u ./.vimrc' # vim with local .vimrc
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Administration 
-alias ea="vim ~/.bash/aliases; source ~/.bashrc"
-alias eb="vim ~/.bashrc"
-alias sb="source ~/.bashrc"
-
-# Testing
-
-alias cddock="cd ~/Work/Docker/"
-alias cdpro="cd ~/Work/Projects/"
-alias dockup="cd ~/Work/Docker/VirtualBox/; vagrant up"
-alias dockdown="cd ~/Work/Docker/VirtualBox/; vagrant halt"
-
-###########################################################################
-# Old aliases: review
-###########################################################################
-
-# Administration
-alias backmeup="rsync -av --exclude .Trashes --exclude .Spotlight-V100 --exclude .DocumentRevisions-V100 --delete /Volumes/ME/ /Volumes/MEB/ && hdiutil unmount /Volumes/MEB/"
-alias cdmain="cd $MAIN_DIR"
-alias cdsoft="cd $SOFTWARE_DIR"
-alias cdman="cd $MAN_DIR"
-alias sixpack_sync="
-    hdiutil attach -mountpoint /Volumes/SOFTWARE_TARGET/ /Volumes/ME/SOFTWARE.sparseimage \
-    && rsync \
-        -av --delete \
-        --exclude .Trashes --exclude .Spotlight-V100 --exclude .DocumentRevisions-V100 --exclude .DS_Store --exclude .fseventsd \
-        /Volumes/SOFTWARE/ /Volumes/SOFTWARE_TARGET/ \
-    && hdiutil unmount /Volumes/SOFTWARE_TARGET/
-"
-
-# MyMan: edit, build, test, clean, deploy, show
-alias mme="cd $MAN_DIR/source/"
-alias mmb='OLDDIR=$(pwd) && cdman && make html; cd $OLDDIR'
-alias mmt="open -a safari $MAN_DIR/build/html/index.html"
-alias mmc="rm -rf $MAN_DIR/build/"
-alias mmd="rsync -av $MAN_DIR/build/html/ $DOC_DIR/MyMan/html/"
-alias mms="open -a safari $DOC_DIR/MyMan/html/index.html"
-
-# Reference
-alias cdref="cd $REF_DIR"
-alias cdco="cd $REF_DIR/CompanyOffice"
-alias cdpo="cd $REF_DIR/PrivateOffice"
-alias cdedu="cd $REF_DIR/Education"
-alias cddoc="cd $REF_DIR/Doc"
-
-# Mylife
-alias cdml="cd $MAIN_DIR/MyLife"
-alias mlreport="cdml && rake report"
-alias mledit="cdml && rake edit_today"
-alias mlprepare="cdml && rake prepare_tomorrow"
-
-alias mlc="cdml"
-alias mle="mledit"
-alias mlr="mlreport"
-alias mlp="mlprepare"
-
-# GTD
-alias cdorg="cd $MAIN_DIR/Orga"
-alias next="cdorg && vim next.yml"
-alias maybe="cdorg && vim maybe.yml"
-alias waiting="cdorg && vim waitingFor.yml"
-alias life="cdorg && vim life.yml"
-alias today="vim $DESKTOP_DIR/today.txt"
-alias gtd="cdorg"
-
-# Development
-alias cdlearn="cd $LEARN_DIR"
-alias cdwork="cd $WORK_DIR"
-alias cdgame="cd $GAME_DIR"
-alias cdtest="cd $TEST_DIR"
-alias ext='/Volumes/SOFTWARE/user/Cool/Modules/Ext/bin/ext'
-
-# Leran
-alias vip="vim -u $LEARN_DIR/PracticalVim/code/essential.vim"
 
