@@ -6,6 +6,8 @@ alias ea="vim ~/.bashrc.d/99-aliases; source ~/.bashrc"
 alias eal="vim ~/.bashrc.d/99-aliases.local; source ~/.bashrc"
 alias dot="cd ~/.my.dotfiles"
 alias bad="cd ~/.bashrc.d"
+alias me="cd ~/Me"
+alias main="cd ~/Me && ansible-playbook me.yml --ask-become-pass"
 
 # Opensource
 alias t3d="cd $osdir/TYPO3.7.x/code/"
