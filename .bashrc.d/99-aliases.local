@@ -2,6 +2,7 @@
 osdir="~/Work/OpenSource"
 
 # Administration 
+alias cloud=" cd ~/.CloudDrive/"
 alias ea="vim ~/.bashrc.d/99-aliases; source ~/.bashrc"
 alias eal="vim ~/.bashrc.d/99-aliases.local; source ~/.bashrc"
 alias dot="cd ~/.my.dotfiles"
