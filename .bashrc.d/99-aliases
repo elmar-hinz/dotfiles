@@ -22,10 +22,11 @@ alias sb="source ~/.bashrc"
 
 # Program customization
 alias igrep="grep -i "
-alias rgrep="grep -Ri "
-alias week='date +%V'
-alias mux="tmuxinator"
 alias lvim='vim -u ./.vimrc' # vim with local .vimrc
+alias mux="tmuxinator"
+alias rgrep="grep -Ri "
+alias tin='tin -r'
+alias week='date +%V'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"

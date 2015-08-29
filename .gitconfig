@@ -4,23 +4,25 @@
 [push]
 	default = simple
 [alias]
-	ada = add --all
+    ada = add --all
     aliases = config --get-regexp '^alias\\.'
-	br = branch
+    br = branch
     branches = branch --all
     brs = branch --all
-	ci = commit
-	co = checkout
+    ci = commit
+    co = checkout
     current-branch = rev-parse --abbrev-ref HEAD
-	last = log -1 HEAD
+    diff-cached = diff --cached
+    last = log -1 HEAD
+    nuke = !sh -c 'git branch -D $1 && git push origin :$1' -
     remotes = remote -v
     set-upstream = remote add upstream 
-	st = status
+    st = status
     sync-upstream = !"git fetch upstream && git merge upstream/$(git current-branch)"
     update = remote update --prune
-	unstage = reset HEAD --
+    unstage = reset HEAD --
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/ElmarHinz/.gitignore_global
 [url "ssh://t3elmar@review.typo3.org:29418"]
 	pushInsteadOf = git://git.typo3.org
 [difftool "sourcetree"]
