@@ -5,4 +5,3 @@ for file in $HOME/.bashrc.d/*; do
 done; 
 
 [ -r "$PRIVATE" ] && [ -f "$PRIVATE" ] && source "$PRIVATE";
-
