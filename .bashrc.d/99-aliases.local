@@ -12,4 +12,5 @@ alias main="cd ~/Me && ansible-playbook me.yml --ask-become-pass"
 
 # Opensource
 alias t3d="cd $osdir/TYPO3.7.x/code/"
+alias cdr="cd ~/Work/Learn/R"
 
