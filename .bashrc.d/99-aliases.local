@@ -14,3 +14,6 @@ alias main="cd ~/Me && ansible-playbook me.yml --ask-become-pass"
 alias t3d="cd $osdir/TYPO3.7.x/code/"
 alias cdr="cd ~/Work/Learn/R"
 
+# Learn
+alias r="R --vanilla --silent "
+alias learn="cd ~/Work/Learn/"
