@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'matchit.zip'
@@ -16,11 +16,15 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
 " Plugin 'tpope/vim-endwise'
 Plugin 'editorconfig/editorconfig-vim'
+Bundle 'ntpeters/vim-better-whitespace'
 
 call vundle#end()
 filetype plugin indent on
 " ************************************************************************** }}}
 " ****************** General autocmd *************************************** {{{
+
+autocmd BufWritePre * StripWhitespace
+
 " ************************************************************************** }}}
 " ****************** File type autocmd ************************************* {{{
 " ============= VimScript file settings ==================================== {{{
@@ -124,6 +128,7 @@ set statusline+=%L        " Total lines
 set statusline+=\         " Separator
 set statusline+=%3p%%     " Percentage
 set statusline+=\         " Separator
+set colorcolumn=80        " Right border
 " ************************************************************************** }}}
 " ****************** Mappings ********************************************** {{{
 :let mapleader = ","
@@ -173,7 +178,7 @@ set statusline+=\         " Separator
 :nnoremap <TAB> :bnext<cr>
 :nnoremap <S-TAB> :bprevious<cr>
 
-" Surf quickfix buffers 
+" Surf quickfix buffers
 :nnoremap <LEADER><TAB> :cnext<cr>
 :nnoremap <LEADER><S-TAB> :cprevious<cr>
 
@@ -235,9 +240,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " ****************** My Environment **************************************** {{{
 command! Report	!rake report
 " ************************************************************************** }}}
-" ****************** Functions ********************************************* {{{ 
+" ****************** Functions ********************************************* {{{
 fun! Eatchar()
 	let c =	getchar(0)
 	return ''
 endfunc
 " ************************************************************************** }}}
+
