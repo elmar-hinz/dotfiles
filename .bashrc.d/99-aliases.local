@@ -1,7 +1,7 @@
 # local config
 osdir="~/Work/OpenSource"
 
-# Administration 
+# Administration
 alias cloud=" cd ~/.CloudDrive/"
 alias ea="vim ~/.bashrc.d/99-aliases; source ~/.bashrc"
 alias eal="vim ~/.bashrc.d/99-aliases.local; source ~/.bashrc"
@@ -17,3 +17,5 @@ alias cdr="cd ~/Work/Learn/R"
 # Learn
 alias r="R --vanilla --silent "
 alias learn="cd ~/Work/Learn/"
+alias bio="cd ~/Work/Learn/Bioinformatics/"
+
