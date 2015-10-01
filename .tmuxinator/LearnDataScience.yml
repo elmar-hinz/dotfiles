@@ -1,7 +1,7 @@
 # ~/.tmuxinator/OpenSource.yml
 
-name: LearnR
-root: ~/Work/Learn/R
+name: LearnDataScience
+root: ~/Work/Learn/R/reviews
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,7 +28,16 @@ root: ~/Work/Learn/R
 # post: tmux -CC attach -t OpenSource
 
 windows:
-  - admin: 
+  - admin:
   - edit:
-  - run:
-  - doc:
+      layout: main-vertical
+      panes:
+        -
+        -
+  - test:
+      root: ~/Work/Learn/R.UnitTest
+      layout: main-vertical
+      panes:
+        -
+        -
+

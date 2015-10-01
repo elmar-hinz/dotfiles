@@ -28,7 +28,7 @@ root: ~/Work/OpenSource
 # post: tmux -CC attach -t OpenSource
 
 windows:
-  - admin: 
+  - admin:
   - edit:
   - run:
   - doc:
