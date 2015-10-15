@@ -1,7 +1,7 @@
 # ~/.tmuxinator/OpenSource.yml
 
 name: LearnDataScience
-root: ~/Work/Learn/R/reviews
+root: ~/Work/Learn/DataScience/ExploratoryDataAnalysis
 
 # Optional tmux socket
 # socket_name: foo
@@ -35,7 +35,7 @@ windows:
         -
         -
   - test:
-      root: ~/Work/Learn/R.UnitTest
+      root: ~/Work/Learn/DataScience/R.UnitTest/
       layout: main-vertical
       panes:
         -
