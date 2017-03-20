@@ -1,7 +1,6 @@
-# ~/.tmuxinator/OpenSource.yml
+name: T3Core
+root: /Volumes/Work/OpenSource/TYPO3.CMS/
 
-name: OpenSource
-root: ~/Work/OpenSource
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,9 +27,11 @@ root: ~/Work/OpenSource
 # post: tmux -CC attach -t OpenSource
 
 windows:
-  - admin:
-  - edit:
-  - test:
-  - git:
-  - doc:
-  - gendoc:
+  - Editing:
+  - Testing:
+  - Git:
+  - View:
+      root: /Volumes/Work/OpenSource/TYPO3.core/app/
+      panes:
+        -
+

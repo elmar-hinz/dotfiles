@@ -1,7 +1,5 @@
-# ~/.tmuxinator/OpenSource.yml
-
-name: OpenSource
-root: ~/Work/OpenSource
+name: LearnCompiler
+root: ~/Work/Learn/Compiler
 
 # Optional tmux socket
 # socket_name: foo
@@ -28,9 +26,6 @@ root: ~/Work/OpenSource
 # post: tmux -CC attach -t OpenSource
 
 windows:
-  - admin:
-  - edit:
-  - test:
-  - git:
-  - doc:
-  - gendoc:
+  - Admin:
+  - Code:
+  - Doc:

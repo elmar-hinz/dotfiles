@@ -1,7 +1,7 @@
-# ~/.tmuxinator/OpenSource.yml
+# ~/.tmuxinator/Admin.yml
 
-name: OpenSource
-root: ~/Work/OpenSource
+name: Admin
+root: ~
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,12 +25,9 @@ root: ~/Work/OpenSource
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t OpenSource
+# post: tmux -CC attach -t Projects
 
 windows:
-  - admin:
-  - edit:
-  - test:
-  - git:
-  - doc:
-  - gendoc:
+  - Updates:
+  - DevMachine:
+  - Other:
