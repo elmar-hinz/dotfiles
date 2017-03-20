@@ -1,5 +1,3 @@
-# local config
-osdir="~/Work/OpenSource"
 
 # Administration
 alias cloud=" cd ~/.CloudDrive/"
@@ -9,13 +7,42 @@ alias dot="cd ~/.my.dotfiles"
 alias bad="cd ~/.bashrc.d"
 alias me="cd ~/Me"
 alias main="cd ~/Me && ansible-playbook me.yml --ask-become-pass"
+alias hhvmd="killall hhvm; killall hh_server; hhvm -m daemon -c /Users/ElmarHinz/Homebrew/etc/hhvm/php.ini -c /Users/ElmarHinz/Homebrew/etc/hhvm/server.ini"
+
+alias v6="cd /Volumes/Work/OpenSource/TYPO3.v6/app/web"
+alias v7="cd /Volumes/Work/OpenSource/TYPO3.v7/app/web"
+alias v8="cd /Volumes/Work/OpenSource/TYPO3.v8/app/web"
+
+alias ph7="brew unlink php56; brew link php70;"
+alias ph5="brew unlink php70; brew link php56;"
+
+alias tunnel="ssh -L 127.0.0.1:33333:127.0.0.1:50701 vagrant@vagrant -N"
+
+#MyMan
+alias mme="cd $MAN_DIR/source"
+alias mmc="rm -rf $MAN_DIR/build"
+alias mmb="cd $MAN_DIR && make html"
+alias mmt="open -a Safari $MAN_DIR/build/html/index.html"
+alias mmd="cp -a $MAN_DIR/build/html/ $DOC_DIR/MyMan/html/"
+alias mms="open -a Safari $DOC_DIR/MyMan/html/index.html"
+
+#MyMan
+alias ml="cd $MYLIFE_DIR"
+
+#Projects
+alias p="cd /Volumes/Work/Projects"
+alias pea="cd /Volumes/Work/Projects/ElmarHinz/app"
+alias pex="cd /Volumes/Work/Projects/ElmarHinz/app/web/typo3conf/ext"
+alias pee="cd /Volumes/Work/Projects/ElmarHinz/app/web/typo3conf/ext/ehdistribution"
 
 # Opensource
-alias t3d="cd $osdir/TYPO3.7.x/code/"
-alias cdr="cd ~/Work/Learn/R"
+alias os="cd /Volumes/Work/OpenSource"
 
 # Learn
-alias r="R --vanilla --silent "
 alias learn="cd ~/Work/Learn/"
+alias comp="cd ~/Work/Learn/Compiler/"
+alias cdr="cd ~/Work/Learn/R"
 alias bio="cd ~/Work/Learn/Bioinformatics/"
+alias r="R --vanilla --silent "
+
 

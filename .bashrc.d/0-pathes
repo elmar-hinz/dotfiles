@@ -3,9 +3,10 @@
 # Pathes go here
 ###########################################################################
 
-# Personal directories 
+# Personal directories
 export MAIN_DIR="$HOME/Main"
 export DESKTOP_DIR="$HOME/Desktop"
+export MYLIFE_DIR="$MAIN_DIR/MyLife"
 export REF_DIR="$MAIN_DIR/Reference"
 export DOC_DIR="$REF_DIR/Doc"
 export LEARN_DIR="$DESKTOP_DIR/Learn"
@@ -20,7 +21,7 @@ export MAN_DIR="$DESKTOP_DIR/MyMan"
 # export BREW_DIR="$SOFTWARE_DIR/brew"
 # export rvm_path="$SOFTWARE_DIR/rvm"
 
-# Pathes 
+# Pathes
 # PATH="$DOTFILES_DIR/bin:$PATH"
 # PATH="$SOFTWARE_DIR/bin:$PATH"
 # export PATH="$BREW_DIR/bin:$PATH"
