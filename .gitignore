@@ -2,5 +2,6 @@
 .vim/bundle/*
 .cache/*
 .vim/view/*
+.vim/spell/
 !.vim/bundle/Vundle.vim
 !.gitkeep
